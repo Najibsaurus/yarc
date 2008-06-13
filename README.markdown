@@ -42,5 +42,3 @@ How to Use YARC
      1. Ensure `yarc.jar` is included in your classpath.
 
      2. `import net.unentangled.*;`
-
-     3. Generate javadocs for API information (optional).
