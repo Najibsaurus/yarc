@@ -1,0 +1,40 @@
+<!-- Ant build file for the YARC library. -->
+
+<project name="yarc" default="compile" basedir=".">
+    <property name="src.dir" value="src" />
+    <property name="build.dir" value="build" />
+    <property name="build.src.dir" value="${build.dir}/src" />
+    <property name="manifest.file" value="MANIFEST.MF" />
+
+    <!-- The base path for compilation.  We include, of course, the
+       already built files in the build-directory, and then we
+       add all the jar files in the "lib" -directory. -->
+    <path id="path.base">
+        <pathelement path="${build}" />
+    </path>
+
+    <!-- Initialising, cleaning, etc. -->
+    <target name="-init" description="Initializes everything, creates directories, etc.">
+        <mkdir dir="${build.dir}" />
+    </target>
+
+    <target name="compile" depends="-init" description="Builds the source code.">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="path.base" debug="off" optimize="on" />
+    </target>
+
+    <target name="jar" depends="compile" description="Builds the JAR file for installation.">
+        <copy todir="${build.src.dir}">
+            <fileset dir="${src.dir}" />
+        </copy>
+
+        <jar jarfile="${build.dir}/${ant.project.name}.jar" manifest="${manifest.file}">
+            <fileset dir="${build.dir}" excludes="${ant.project.name}.jar" />
+        </jar>
+    </target>
+
+    <!-- Removes the build directory -->
+    <target name="clean" description="Cleans away all generated files.">
+        <delete dir="${build.dir}" />
+    </target>
+
+</project>

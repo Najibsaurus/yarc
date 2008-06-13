@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: . yarc/
+Created-By: Mohammed Badran
+Main-Class: net.unentangled.yarc.YarcDriver
+Implementation-Title: "YARC"
+Implementation-Version: "1"
