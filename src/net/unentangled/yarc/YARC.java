@@ -1,17 +1,5 @@
 package net.unentangled.yarc;
 
-/*
- * NA release file on sourceforge
- * NA update readme
- * NA add tests for XCIX vs IC (see wikipedia)
- * NA define magic numbers in algorithm
- * NA polish build file
- * NA improve yarc driver
- * NA add targets for tests, javadocs, and reports in build file
- * SM add support for numbers larger than 5000?
- * SM bundle yarc driver externally?
-*/
-
 /**
  * Interface for ArabicToRoman and RomanToArabic classes
  *
